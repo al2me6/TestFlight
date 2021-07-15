@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -333,6 +333,8 @@ namespace TestFlight
 
         protected void UpdatePlanner()
         {
+            if (core == null) return;
+
             bool hasContinuousBurnTime = ratedBurnTime != ratedContinuousBurnTime;
 
             Fields[nameof(ratedContinuousBurnTime)].guiActiveEditor = hasContinuousBurnTime;
